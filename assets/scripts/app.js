@@ -1,14 +1,22 @@
 import { fetchCountries } from "./fetchCountries.js";
 import { fetchCountry } from "./fetchCountry.js";
 
-fetchCountries().then((countries) => {
+ async function openCountryModal(event){
+    let country = event.currentTarget.dataset.country;
+    let countryData = await fetchCountry(country);
+    console.log(countryData)
+    
+ } 
+
+fetchCountries()
+.then((countries) => {
+    console.log(countries)
     let html = "";
     let container = document.querySelector(".api-container"); // DOM container
     for (let i = 0; i < 8; i++) {
-        let randomNum = Math.floor(Math.random() * 250); // Random number between 0 & 250
+        let randomNum = Math.floor(Math.random() * countries.length); // Random number between 0 & 250
         let country = countries[randomNum]; // Random pick country
-        const countryContainer = document.createElement("div");
-        let htmlSegment = `<div class='country' id='${i}'> 
+        let htmlSegment = `<div class='country' data-country=${country.name.common} id='${i}'> 
                                 <img class='country__flag' src="${country.flags.png}" alt="">
                                 <h2 class='country__name'>${country.name.common}</h2>
                                 <span class='country__population'>Population: ${country.population}</span>
@@ -18,4 +26,11 @@ fetchCountries().then((countries) => {
         html += htmlSegment;
     }
     container.innerHTML = html;
-});
+})
+.then(()=>{
+    let countries = document.getElementsByClassName("country")
+    console.log(countries)
+    for (let country of countries)  {
+        country.addEventListener("click", openCountryModal)
+    }
+})
