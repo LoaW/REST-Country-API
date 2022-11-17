@@ -1,0 +1,83 @@
+.modal {
+    height: 90vh;
+    padding: 0;
+    border: none;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        font-size: 1em;
+        h2 {
+            font-size: 1em;
+            padding: 1em;
+
+        }
+
+        .darkMode {
+            display: flex;
+            align-items: center;
+            margin-right: 2em;
+            &__icon {
+                width: 1em;
+                // margin-right: 1em;
+            }
+        }
+    }
+
+    .close-button {
+        display: flex;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: fit-content;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        cursor: pointer;
+        padding: .3em 1.5em;
+        margin-left: 1em;
+
+        img {
+            width: 3vw;
+        }
+    }
+
+    &__container {
+        padding: 1em;
+
+        &__flag {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &__information {
+            width: 100%;
+
+            &__description {
+                display: flex;
+                flex-direction: column;
+            }
+
+            &__border {
+                &__country {
+                    display: flex;
+                    flex-wrap: wrap;
+                    a {
+                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                        margin-right: 1em;
+                        padding: .2em 1em;
+                        margin-bottom: 1em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal::backdrop{
+    background-color: rgb(112, 111, 111);
+    opacity: .8;
+}

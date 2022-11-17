@@ -18,6 +18,84 @@ header .darkMode__icon {
   width: 1em;
   margin-right: 1em;
 }
+.modal {
+  height: 90vh;
+  padding: 0;
+  border: none;
+}
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-size: 1em;
+}
+.modal__header h2 {
+  font-size: 1em;
+  padding: 1em;
+}
+.modal__header .darkMode {
+  display: flex;
+  align-items: center;
+  margin-right: 2em;
+}
+.modal__header .darkMode__icon {
+  width: 1em;
+}
+.modal .close-button {
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  cursor: pointer;
+  padding: 0.3em 1.5em;
+  margin-left: 1em;
+}
+.modal .close-button img {
+  width: 3vw;
+}
+.modal__container {
+  padding: 1em;
+}
+.modal__container__flag {
+  width: 100%;
+}
+.modal__container__flag img {
+  width: 100%;
+}
+.modal__container__information {
+  width: 100%;
+}
+.modal__container__information__description {
+  display: flex;
+  flex-direction: column;
+}
+.modal__container__information__border__country {
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal__container__information__border__country a {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-right: 1em;
+  padding: 0.2em 1em;
+  margin-bottom: 1em;
+}
+
+.modal::-webkit-backdrop {
+  background-color: rgb(112, 111, 111);
+  opacity: 0.8;
+}
+
+.modal::backdrop {
+  background-color: rgb(112, 111, 111);
+  opacity: 0.8;
+}
+
 body {
   margin: 0px;
   padding: 0px;
