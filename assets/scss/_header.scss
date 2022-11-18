@@ -4,16 +4,19 @@ header {
     align-items: center;
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    font-size: 1em;
+    padding: 1em 0em;
     h1 {
         font-size: 1em;
+        margin-left: 5vw;
     }
     .darkMode {
         display: flex;
         align-items: center;
+        margin-right: 5vw;
+        cursor: pointer;
         &__icon {
             width: 1em;
-            margin-right: 1em;
+            margin-right: .5em;
         }
         &__text{
             

@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>
-            <h1>Where in the world</h1>
+            <h1>Where in the world?</h1>
             <div class="darkMode">
                 <img
                     class="darkMode__icon"
@@ -21,11 +21,11 @@
         </header>
         <main>
             <section class="search-container">
-                <form action="/action_page.php">
-                    <button type="submit"></button>
-                    <input type="search" placeholder="Search for a country..." />
+                <form class="search-container__search" action="/action_page.php">
+                    <button id='searchIcon' type="submit"></button>
+                    <input id='searchText' type="search" placeholder="Search for a country..." />
                 </form>
-                <select name="region" id="region-select">
+                <select class="search-container__filter" name="region" id="region-select">
                     <option value="">Filter by region</option>
                     <option value="africa">Africa</option>
                     <option value="america">America</option>

@@ -1,27 +1,28 @@
 .modal {
-    height: 90vh;
-    padding: 0;
+    padding: 0px;
     border: none;
+    height: 100vh;
     &__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-        font-size: 1em;
+        padding: 1em 0em;
         h2 {
             font-size: 1em;
-            padding: 1em;
-
+            margin-left: 5vw;
         }
-
         .darkMode {
             display: flex;
             align-items: center;
-            margin-right: 2em;
+            margin-right: 5vw;
+            cursor: pointer;
             &__icon {
                 width: 1em;
-                // margin-right: 1em;
+                margin-right: 0.5em;
+            }
+            &__text {
             }
         }
     }
@@ -34,7 +35,7 @@
         margin-top: 2em;
         margin-bottom: 2em;
         cursor: pointer;
-        padding: .3em 1.5em;
+        padding: 0.3em 1.5em;
         margin-left: 1em;
 
         img {
@@ -44,7 +45,9 @@
 
     &__container {
         padding: 1em;
-
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
         &__flag {
             width: 100%;
 
@@ -68,7 +71,7 @@
                     a {
                         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                         margin-right: 1em;
-                        padding: .2em 1em;
+                        padding: 0.2em 1em;
                         margin-bottom: 1em;
                     }
                 }
@@ -77,7 +80,7 @@
     }
 }
 
-.modal::backdrop{
+.modal::backdrop {
     background-color: rgb(112, 111, 111);
-    opacity: .8;
+    opacity: 0.8;
 }

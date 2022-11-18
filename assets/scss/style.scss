@@ -1,7 +1,14 @@
-@import "header", "modal";
+@import "variable", "header", "modal", "home";
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 body{
     margin: 0px;
     padding: 0px;
     font-family: 'Nunito Sans', sans-serif;
+    color: $deepBlue;
+    background-color: $lightGrey;
+}
+
+.darkModeAll{
+    color: $lightGrey;
+    background-color: $darkBlue;
 }
