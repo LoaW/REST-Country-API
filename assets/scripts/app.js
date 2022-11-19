@@ -3,7 +3,6 @@ import { fetchCountry } from "./fetchCountry.js";
 import { toggleDarkMode } from "./darkMode.js";
 const modal = document.querySelector(".modal");
 const darkMode = document.querySelector(".darkMode");
-const darkModeDetail = document.querySelector(".darkModeDetail");
 
 darkMode.addEventListener("click", toggleDarkMode);
 
@@ -25,7 +24,7 @@ async function openCountryModal(event) {
             <h2>Where in the world</h2>
             <div class="darkModeDetail">
                 <img
-                    class="darkMode__icon"
+                    class="darkModeModal__icon"
                     src="./assets/img/moon-outline.svg"
                     alt="darkMode__icon"
                 />
@@ -66,9 +65,11 @@ async function openCountryModal(event) {
                 </div>
             </div>
         </div>`;
-
-
+    
     modal.innerHTML = htmlSection;
+
+    let darkModeDetail = document.querySelector(".darkModeDetail");
+    darkModeDetail.addEventListener('click', toggleDarkMode)
     const closeModal = document.querySelector(".close-button");
     closeModal.addEventListener("click", function () {
         modal.close();

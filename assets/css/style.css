@@ -38,13 +38,13 @@ header .darkMode__icon {
   font-size: 1em;
   margin-left: 5vw;
 }
-.modal__header .darkMode {
+.modal__header .darkModeModal {
   display: flex;
   align-items: center;
   margin-right: 5vw;
   cursor: pointer;
 }
-.modal__header .darkMode__icon {
+.modal__header .darkModeModal__icon {
   width: 1em;
   margin-right: 0.5em;
 }
