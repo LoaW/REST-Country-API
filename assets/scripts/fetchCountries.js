@@ -6,10 +6,8 @@ export async function fetchCountries() {
     });
     if (response.ok === true) {
         return response.json();
-    }
-    else{
+    } else {
         throw new Error("Impossible de contacter le serveur");
     }
-    
 }
 // fetchCountries().then((countries) => console.log(countries[64]));

@@ -14,7 +14,7 @@
                 <img
                     class="darkMode__icon"
                     src="./assets/img/moon-outline.svg"
-                    alt="darkMode__icon"
+                    alt="dark mode icon"
                 />
                 <span class="darkMode__text">Dark Mode</span>
             </div>
@@ -22,49 +22,36 @@
         <main>
             <section class="search-container">
                 <div class="search-container__search">
-                    <button id='searchIcon' type="button"></button>
-                    <input id='searchText' type="text" placeholder="Search for a country..." value="france" />
+                    <button id="searchIcon" type="button"></button>
+                    <input
+                        id="searchText"
+                        type="text"
+                        placeholder="Search for a country..."
+                        value=""
+                    />
                 </div>
-                <select class="search-container__filter" name="region" id="region-select">
+                <select
+                    class="search-container__filter"
+                    name="region"
+                    id="region-select"
+                >
                     <option value="">Filter by region</option>
-                    <option value="africa">Africa</option>
-                    <option value="america">America</option>
-                    <option value="asia">Asia</option>
-                    <option value="europe">Europe</option>
-                    <option value="oceania">Oceania</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Americas">America</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
                 </select>
             </section>
 
             <section class="api-container">
-                
+                <!-- JS INJECTED HERE -->
             </section>
         </main>
         <dialog class="modal">
-            <!-- <div class="button close-button">
-                <img src="./assets/img/retour.png" alt="">
-                <span>Back</span>
-            </div>
-            <div class="modal__flag">
-                <img src="" alt="">
-            </div>
-            <div class="modal__information">
-                <h2></h2>
-                <div class="modal__information__description">
-                    <span>Native Name: </span>
-                    <span>Population: </span>
-                    <span>Region: </span>
-                    <span>Sub Region: </span>
-                    <span>Capital: </span>
-                    <span>Top Level Domain: </span>
-                    <span>Currencies: </span>
-                    <span>Languages: </span>
-                </div>
-                <div class="modal__information__border">
-                    <span>Border Countries: </span>
-                    <a href=""></a>
-                </div>
-            </div> -->
+            <!-- JS INJECTED HERE -->
         </dialog>
+
         <script type="module" src="./assets/scripts/app.js"></script>
     </body>
 </html>

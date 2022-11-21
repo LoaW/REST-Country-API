@@ -2,6 +2,7 @@
     padding: 0px;
     border: none;
     height: 100vh;
+    color: $deepBlue;
     &__header {
         display: flex;
         justify-content: space-between;
@@ -11,18 +12,16 @@
         padding: 1em 0em;
         h2 {
             font-size: 1em;
-            margin-left: 5vw;
+            margin-left: 5%;
         }
-        .darkModeModal {
+        .darkModeDetail {
             display: flex;
             align-items: center;
-            margin-right: 5vw;
+            margin-right: 5%;
             cursor: pointer;
             &__icon {
                 width: 1em;
                 margin-right: 0.5em;
-            }
-            &__text {
             }
         }
     }
@@ -35,11 +34,12 @@
         margin-top: 2em;
         margin-bottom: 2em;
         cursor: pointer;
-        padding: 0.3em 1.5em;
+        padding: 0.3em 1em;
         margin-left: 1em;
 
         img {
-            width: 3vw;
+            width: 2em;
+            margin-right: 10px;
         }
     }
 
@@ -48,22 +48,20 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        max-width: 300px;
         &__flag {
-            width: 100%;
-
+            max-width: 300px;
             img {
-                width: 100%;
+                max-width: 300px;
             }
         }
 
         &__information {
             width: 100%;
-
             &__description {
                 display: flex;
                 flex-direction: column;
             }
-
             &__border {
                 &__country {
                     display: flex;
