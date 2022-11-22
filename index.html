@@ -21,14 +21,17 @@
         </header>
         <main>
             <section class="search-container">
-                <div class="search-container__search">
-                    <button id="searchIcon" type="button"></button>
-                    <input
-                        id="searchText"
-                        type="text"
-                        placeholder="Search for a country..."
-                        value=""
-                    />
+                <div id="searchContainer" class="search-container__search">
+                    <div class="search-wrapper">
+                        <button id="searchIcon" type="button" class="searchIcon"></button>
+                        <input
+                            id="searchText"
+                            type="search"
+                            placeholder="Search for a country..."
+                            value=""
+                            class="searchText"
+                        />
+                    </div>
                 </div>
                 <select
                     class="search-container__filter"

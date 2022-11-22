@@ -2,7 +2,7 @@
 import { fetchCountries } from "./fetchCountries.js";
 import { fetchCountry } from "./fetchCountry.js";
 import { toggleDarkMode } from "./darkMode.js";
-// import { autocomplete } from "./autoComplete.js";
+import { autocomplete } from "./autoComplete.js";
 import { filterRegion } from "./filterRegion.js";
 
 // Variable declaration 
@@ -178,6 +178,13 @@ fetchCountries()
     .then((countries) => {
         let html = "";
         let container = document.querySelector(".api-container"); // DOM container
+        // Put all country in array
+        let countryData = []
+        for (const country of countries) {
+            countryData.push(country.name.common)
+        }
+        console.log(countryData)
+        autocomplete(document.getElementById("searchText"), countryData);
         // SELECT 8 CONTRY
         for (let i = 0; i < 8; i++) {
             let randomNum = Math.floor(Math.random() * countries.length); // Random number between 0 & 250

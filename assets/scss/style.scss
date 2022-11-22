@@ -9,6 +9,11 @@ body{
 }
 
 .darkModeAll{
-    color: $lightGrey;
+    color: $grey;
     background-color: $darkBlue;
+}
+
+.deepColor{
+    color: $grey !important;
+    background-color: $deepBlue !important;
 }
