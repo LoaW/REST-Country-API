@@ -19,7 +19,9 @@ The technologies used for this project are the following:
 
 
 ## Learning objectives
-- Interact with a REST api to collect and display data
+- A typical HTTP flow: send asynchronous requests to a remote server and process the results
+- DOM manipulation: changing the DOM based on the results of the HTTP requests
+- Learn to aggregate and parse data fetched from an REST API
 - Search fields with autocompletion
 - Country filtering by continent
 - Write meaningful, semantically correct HTML
