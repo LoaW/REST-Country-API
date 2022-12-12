@@ -8,7 +8,7 @@ REST Countries API is a project proposed by Frontend Mentor.
 It is about integrating as well as possible a design proposed as a challenge.
 The starting sources are images (jpg) and that's it.
 
-You can look at a final preview here at [Bookmark - Landing page](https://loaw.github.io/bookmark-landing-page/)
+You can look at a final preview here at [REST Countries API](https://loaw.github.io/REST-Country-API/)
 
 ## Tech point
 The technologies used for this project are the following: 
@@ -24,6 +24,7 @@ The technologies used for this project are the following:
 - Learn to aggregate and parse data fetched from an REST API
 - Search fields with autocompletion
 - Country filtering by continent
+- Color theme switcher
 - Write meaningful, semantically correct HTML
 - Use modern positioning techniques using the grid or flexbox model
 - Create a "pixel-perfect" integration from a given wireframe
