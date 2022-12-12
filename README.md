@@ -1,6 +1,6 @@
 # REST Countries API with color theme switcher
 
-![alt text](./assets/design/country_pres1.png)
+![alt text](./assets/design/country-presa.png)
 
 ## What is this page about?
 
