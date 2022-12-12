@@ -5,7 +5,8 @@ import { toggleDarkMode } from "./darkMode.js";
 import { autocomplete } from "./autoComplete.js";
 import { filterRegion } from "./filterRegion.js";
 
-// Variable declaration 
+// Variable declaration
+const container = document.querySelector(".api-container"); // DOM container
 const modal = document.querySelector(".modal");
 const darkMode = document.querySelector(".darkMode");
 const inputBtn = document.getElementById("searchIcon");
@@ -24,19 +25,36 @@ inputCountry.addEventListener("keypress", function (e) {
 
 // Show Modal (by input country)
 async function openInputCountry() {
-    inputCountry = document.getElementById("searchText").value;
-    let countryData = await fetchCountry(inputCountry); // FETCH ONE CONTRY SELECTED
+    // Get the input value
+    const inputCountry = document.getElementById("searchText").value;
+
+    // Fetch data for the selected country
+    const countryData = await fetchCountry(inputCountry);
+
+    // Show the modal
     modal.showModal();
+
+    // Extract currencies and languages from the data
     const currencyArray = Object.values(countryData[0].currencies);
     const languageArray = Object.values(countryData[0].languages);
+
+    // Create a function for getting border countries
     function getBorder() {
-        let borderCountries = [];
-        for (const element of countryData[0].borders) {
-            borderCountries += `<a>${element}</a>`;
+        // If the country has borders, return a list of links for each border country
+        if (countryData[0].borders) {
+            const borderCountries = [];
+            for (const element of countryData[0].borders) {
+                borderCountries.push(`<a>${element}</a>`);
+            }
+            return borderCountries;
+        } else {
+            // Otherwise, return a message saying there are no borders
+            return "No physical borders";
         }
-        return borderCountries;
     }
-    let htmlSection = `
+
+    // HTML with data to inject
+    let content = `
         <section class="modal__header">
             <h2>Where in the world</h2>
             <div class="darkModeDetail">
@@ -84,11 +102,15 @@ async function openInputCountry() {
                 </div>
             </div>
         </div>`;
+    modal.innerHTML = content;
 
-    modal.innerHTML = htmlSection;
-
-    let darkModeDetail = document.querySelector(".darkModeDetail");
+    // Add an event listener for the "click" event on the dark mode detail element,
+    // which will toggle the dark mode when clicked
+    const darkModeDetail = document.querySelector(".darkModeDetail");
     darkModeDetail.addEventListener("click", toggleDarkMode);
+
+    // Add an event listener for the "click" event on the close button,
+    // which will close the modal when clicked
     const closeModal = document.querySelector(".close-button");
     closeModal.addEventListener("click", function () {
         modal.close();
@@ -97,23 +119,36 @@ async function openInputCountry() {
 
 // Show Modal (by select country)
 async function openCountryModal(event) {
+    // Get the country value
     let country = event.currentTarget.dataset.country;
-    let countryData = await fetchCountry(country); // FETCH ONE CONTRY SELECTED
+
+    // Fetch data for the selected country
+    let countryData = await fetchCountry(country);
+
+    // Show the modal
     modal.showModal();
+
+    // Extract currencies and languages from the data
     const currencyArray = Object.values(countryData[0].currencies);
     const languageArray = Object.values(countryData[0].languages);
+
+    // Create a function for getting border countries
     function getBorder() {
-        let borderCountries = [];
+        // If the country has borders, return a list of links for each border country
         if (countryData[0].borders) {
+            const borderCountries = [];
             for (const element of countryData[0].borders) {
-                borderCountries += `<a>${element}</a>`;
+                borderCountries.push(`<a>${element}</a>`);
             }
             return borderCountries;
         } else {
+            // Otherwise, return a message saying there are no borders
             return "No physical borders";
         }
     }
-    let htmlSection = `
+
+    // HTML with data to inject
+    let content = `
         <section class="modal__header">
             <h2>Where in the world</h2>
             <div class="darkModeDetail">
@@ -161,11 +196,15 @@ async function openCountryModal(event) {
                 </div>
             </div>
         </div>`;
+    modal.innerHTML = content;
 
-    modal.innerHTML = htmlSection;
-
-    let darkModeDetail = document.querySelector(".darkModeDetail");
+    // Add an event listener for the "click" event on the dark mode detail element,
+    // which will toggle the dark mode when clicked
+    const darkModeDetail = document.querySelector(".darkModeDetail");
     darkModeDetail.addEventListener("click", toggleDarkMode);
+
+    // Add an event listener for the "click" event on the close button,
+    // which will close the modal when clicked
     const closeModal = document.querySelector(".close-button");
     closeModal.addEventListener("click", function () {
         modal.close();
@@ -176,14 +215,13 @@ async function openCountryModal(event) {
 fetchCountries()
     // Fetch and display 8 (all) countries
     .then((countries) => {
-        let html = "";
-        let container = document.querySelector(".api-container"); // DOM container
+        let content = "";
         // Put all country in array
-        let countryData = []
+        let countryData = [];
         for (const country of countries) {
-            countryData.push(country.name.common)
+            countryData.push(country.name.common);
         }
-        console.log(countryData)
+        console.log(countryData);
         autocomplete(document.getElementById("searchText"), countryData);
         // SELECT 8 CONTRY
         for (let i = 0; i < 8; i++) {
@@ -211,9 +249,9 @@ fetchCountries()
                                 </div>
 
                             </div>`; // country card html
-            html += htmlSegment;
+            content += htmlSegment;
         }
-        container.innerHTML = html;
+        container.innerHTML = content;
     })
     // Set addEventListener on 8 countries
     .then(() => {

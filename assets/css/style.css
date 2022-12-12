@@ -184,6 +184,7 @@ header .darkMode__icon {
   overflow: hidden;
   overflow-x: hidden;
   top: 5vh;
+  cursor: pointer;
 }
 .search-container__filter {
   width: 40%;
